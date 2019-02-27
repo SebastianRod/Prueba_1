@@ -5,6 +5,7 @@
  */
 package model.dao;
 
+import java.sql.Connection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,7 +19,7 @@ public class FacturaMySQLDbDAO implements FacturaDAO{
     public Map<String, String> consultaFactura(int id_factura) {
         MySQLDbDAOFactory mydb = new MySQLDbDAOFactory();
         Map<String, String> factura = new HashMap<>();
-        
+        Connection con = mydb.MySQLDbDAOFactory();
         return factura;
     }
     

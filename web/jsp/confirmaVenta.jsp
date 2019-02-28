@@ -16,23 +16,23 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="./inicio.jsp">Modulo de Ventas</a>
+            <a class="navbar-brand" href="/Prueba_1/jsp/inicio.jsp">Modulo de Ventas</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="./consultaVehiculo.jsp">Consulta Vehiculos <span class='fas fa-car' style='font-size:24px'></span></a>
+                        <a class="nav-link" href="/Prueba_1/jsp/consultaVehiculo.jsp">Consulta Vehiculos <span class='fas fa-car' style='font-size:24px'></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="./ingresaVenta.jsp">Ingresar Venta <span class='fas fa-cart-plus' style='font-size:24px'></span></a>
+                        <a class="nav-link active" href="/Prueba_1/jsp/ingresaVenta.jsp">Ingresar Venta <span class='fas fa-cart-plus' style='font-size:24px'></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./consultaVenta.jsp">Consulta venta <span class='fas fa-search-dollar' style='font-size:24px'></span></a>
+                        <a class="nav-link" href="/Prueba_1/jsp/consultaVenta.jsp">Consulta venta <span class='fas fa-search-dollar' style='font-size:24px'></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./consultaCliente.jsp">Consulta Cliente <span class="fas fa-child" style='font-size:24px'></span></a>
+                        <a class="nav-link" href="/Prueba_1/jsp/consultaCliente.jsp">Consulta Cliente <span class="fas fa-child" style='font-size:24px'></span></a>
                     </li>
                 </ul>
             </div>
@@ -70,28 +70,33 @@
         </div>
         <div class="container">
             <div class="panel panel-primary" id="auto">
-                <div class="table-responsive">
-                    <table id="tablaResultadoAuto" class="table table-striped table-hover table-bordered" >
-                        <thead>
-                            <tr>
-                                <th>ID_Vehiculo</th>
-                                <th>Placa Vehiculo</th>
-                                <th>Modelo Vehiculo</th>
-                                <th>Precio Vehiculo</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                <form method="post"  action="/Prueba_1/ConfirmaVentaController">
+                    <div class="table-responsive">
+                        <table id="tablaResultadoAuto" class="table table-striped table-hover table-bordered" >
+                            <thead>
+                                <tr>
+                                    <th>ID_Vehiculo</th>
+                                    <th>Placa Vehiculo</th>
+                                    <th>Modelo Vehiculo</th>
+                                    <th>Precio Vehiculo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
-                            <tr>
-                                <td>${vehiculo.id}</td>
-                                <td>${vehiculo.placa}</td>
-                                <td>${vehiculo.modelo}</td>
-                                <td>${vehiculo.precio}</td>
-                            </tr>
+                                <tr>
+                                    <td>${vehiculo.id}</td>
+                                    <td>${vehiculo.placa}</td>
+                                    <td>${vehiculo.modelo}</td>
+                                    <td>${vehiculo.precio}</td>
+                                </tr>
 
-                        </tbody>
-                    </table>
-                </div>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>
+                    <center><input type="submit" value="CONSULTAR"></center>
+                    </p>
+                </form>
             </div>
         </div>
     </body>

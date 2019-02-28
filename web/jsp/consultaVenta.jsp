@@ -54,6 +54,36 @@
                     </div>
                 </div>
             </div>
+            <div class="panel panel-primary">
+                <div class="table-responsive">
+                    <table id="tablaResultadoFactura" class="table table-striped table-hover table-bordered" >
+                        <thead>
+                            <tr>
+                                <th>ID Factura</th>
+                                <th>Fecha Factura</th>
+                                <th>Valor Factura</th>
+                                <th>ID Cliente</th>
+                                <th>Nombres Cliente</th>
+                                <th>Apellidos Cliente</th>
+                                <th>ID Vehiculo</th>
+                                <th>Placa Vehiculo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>${factura.id_factura}</td>
+                                <td>${factura.fecha_factura}</td>
+                                <td>${factura.valor_factura}</td>
+                                <td>${factura.id_cliente}</td>
+                                <td>${factura.nombres_cliente}</td>
+                                <td>${factura.apellidos_cliente}</td>
+                                <td>${factura.id_vehiculo}</td>
+                                <td>${factura.placa_vehiculo}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </body>
 </html>

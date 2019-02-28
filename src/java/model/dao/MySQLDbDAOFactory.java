@@ -47,4 +47,9 @@ public class MySQLDbDAOFactory extends DAOFactory{
     public ClienteDAO getClienteDAO() {
         return new ClienteMySQLDbDAO();
     }
+
+    @Override
+    public FacturaDAO getFacturaDAO() {
+        return new FacturaMySQLDbDAO();
+    }
 }

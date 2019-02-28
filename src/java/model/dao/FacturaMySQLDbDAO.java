@@ -29,11 +29,31 @@ public class FacturaMySQLDbDAO implements FacturaDAO{
             rs = st.executeQuery();
             while (rs.next()) {
                 factura.put("id_factura", rs.getString("id_factura"));
+                factura.put("fecha_factura", rs.getString("fecha_factura"));
+                factura.put("valor_factura", rs.getString("valor_factura"));
+                factura.put("valor_factura", rs.getString("valor_factura"));
             }
         }catch(Exception e){
             e.printStackTrace();
         }
         return factura;
+    }
+
+    @Override
+    public int crearFactura(int id_cliente, int id_vehiculo) {
+        MySQLDbDAOFactory mydb = new MySQLDbDAOFactory();
+        int resultado = 0;
+        Connection con = mydb.MySQLDbDAOFactory();
+        PreparedStatement st;
+        String insert = "insert into factura ((VALOR_FACTURA,CLIENTE_ID_CLIENTE,VEHICULO_ID_VEHICULO,USUARIO_ID_USUARIO) values ("+40239+","+id_cliente+","+id_vehiculo+","+"1);";
+        try{
+            st = con.prepareStatement(insert);
+            resultado = st.executeUpdate();
+            st.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return resultado;
     }
     
 }

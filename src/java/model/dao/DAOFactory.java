@@ -16,6 +16,7 @@ public abstract class DAOFactory {
     public abstract UsuarioDAO getUsuarioDAO();
     public abstract VehiculoDAO getVehiculoDAO();
     public abstract ClienteDAO getClienteDAO();
+    public abstract FacturaDAO getFacturaDAO();
 
     public static DAOFactory getDAOFactory(int whichFactory) {
         switch (whichFactory) {

@@ -39,64 +39,68 @@
         </nav>
         <div class="container">
             <div class="panel panel-primary">
-                <div class="table-responsive">
-                    <table id="tablaResultadoCliente" class="table table-striped table-hover table-bordered" >
-                        <thead>
-                            <tr>
-                                <th>Tipo Documento</th>
-                                <th>ID Cliente</th>
-                                <th>Nombres Cliente</th>
-                                <th>Apellidos Cliente</th>
-                                <th>Telefono Cliente</th>
-                                <th>Correo Cliente</th>
-                                <th>Direccion Cliente</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>${cliente.tipo_documento_cliente}</td>                                
-                                <td>${cliente.id_cliente}</td>                                
-                                <td>${cliente.nombres_cliente}</td>                                
-                                <td>${cliente.apellidos_cliente}</td>                                
-                                <td>${cliente.telefono_cliente}</td>                                
-                                <td>${cliente.correo_cliente}</td>
-                                <td>${cliente.direccion_cliente}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="panel panel-primary" id="auto">
-                <form method="post"  action="/Prueba_1/ConfirmaVentaController">
-                    <div class="table-responsive">
-                        <table id="tablaResultadoAuto" class="table table-striped table-hover table-bordered" >
-                            <thead>
-                                <tr>
-                                    <th>ID_Vehiculo</th>
-                                    <th>Placa Vehiculo</th>
-                                    <th>Modelo Vehiculo</th>
-                                    <th>Precio Vehiculo</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                <tr>
-                                    <td>${vehiculo.id}</td>
-                                    <td>${vehiculo.placa}</td>
-                                    <td>${vehiculo.modelo}</td>
-                                    <td>${vehiculo.precio}</td>
-                                </tr>
-
-                            </tbody>
-                        </table>
+                <div class="panel-body">
+                    <div class="login-form">
+                        <div class="panel-heading">Datos Cliente</div>
+                        <center>
+                            <form method="post"  action="/Prueba_1/ConfirmaVentaController">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p>
+                                            <label>Tipo documento</label>
+                                            <input type="text" class="form-control form-control-sm" name="id_cliente" id="tipo_documento_cliente" placeholder="${cliente.tipo_documento_cliente}" disabled=”disabled”>
+                                        </p>
+                                        <p>
+                                            <label>ID Cliente:</label>
+                                            <input type="text" class="form-control form-control-sm" name="id_cliente" id="id_cliente" placeholder="${cliente.id_cliente}" disabled=”disabled”>
+                                        </p>
+                                        <p>
+                                            <label>Nombres Cliente:</label>
+                                            <input type="text" class="form-control form-control-sm" name="id_cliente" id="nombres_cliente" placeholder="${cliente.nombres_cliente}" disabled=”disabled”>
+                                        </p>
+                                        <p>
+                                            <label>Apellidos Cliente:</label>
+                                            <input type="text" class="form-control form-control-sm" name="id_cliente" id="apellidos_cliente" placeholder="${cliente.apellidos_cliente}" disabled=”disabled”>
+                                        </p>
+                                        <p>
+                                            <label>Telefono Cliente:</label>
+                                            <input type="text" class="form-control form-control-sm" name="id_cliente" id="telefono_cliente" placeholder="${cliente.telefono_cliente}" disabled=”disabled”>
+                                        </p>
+                                        <p>
+                                            <label>Correo Cliente:</label>
+                                            <input type="text" class="form-control form-control-sm" name="id_cliente" id="correo_cliente" placeholder="${cliente.correo_cliente}" disabled=”disabled”>
+                                        </p>
+                                        <p>
+                                            <label>Direccion Cliente:</label>
+                                            <input type="text" class="form-control form-control-sm" name="id_cliente" id="direccion_cliente" placeholder="${cliente.direccion_cliente}" disabled=”disabled”>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>
+                                            <label>ID Vehiculo</label>
+                                            <input type="text" class="form-control form-control-sm" name="id_vehiculo" id="id_vehiculo" placeholder="${vehiculo.id}" disabled=”disabled”>
+                                        </p>
+                                        <p>
+                                            <label>Placa Vehiculo</label>
+                                            <input type="text" class="form-control form-control-sm" name="placa_vehiculo" id="placa_vehiculo" placeholder="${vehiculo.placa}" disabled=”disabled”>
+                                        </p>
+                                        <p>
+                                            <label>Modelo Vehiculo</label>
+                                            <input type="text" class="form-control form-control-sm" name="modelo_vehiculo" id="modelo_vehiculo" placeholder="${vehiculo.modelo}" disabled=”disabled”>
+                                        </p>
+                                        <p>
+                                            <label>Precio Vehiculo</label>
+                                            <input type="text" class="form-control form-control-sm" name="precio_vehiculo" id="precio_vehiculo" placeholder="${vehiculo.precio}" disabled=”disabled”>
+                                        </p>
+                                    </div>
+                                </div>
+                                <p>
+                                <center><input type="submit" value="CONSULTAR"></center>
+                                </p>
+                            </form>
+                        </center>
                     </div>
-                    <p>
-                    <center><input type="submit" value="CONSULTAR"></center>
-                    </p>
-                </form>
+                </div>
             </div>
         </div>
     </body>

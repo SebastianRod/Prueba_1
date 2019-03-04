@@ -25,7 +25,7 @@ public class ClienteMySQLDbDAO implements ClienteDAO {
         PreparedStatement st;
         ResultSet rs;
         try {
-            st = con.prepareStatement("select * from cliente where id_cliente = '" + id_cliente + "' and tipo_documento_cliente = '" + tipoDocumento + "';");
+            st = con.prepareStatement("select * from cliente where id_cliente = " + id_cliente + " and tipo_documento_cliente = '" + tipoDocumento + "';");
             rs = st.executeQuery();
             while (rs.next()) {
                 cliente.put("id_cliente", rs.getString("id_cliente"));

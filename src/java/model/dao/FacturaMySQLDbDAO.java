@@ -48,12 +48,12 @@ public class FacturaMySQLDbDAO implements FacturaDAO {
     }
 
     @Override
-    public int crearFactura(int id_cliente, int id_vehiculo) {
+    public int crearFactura(String id_cliente, String id_vehiculo,String precio) {
         MySQLDbDAOFactory mydb = new MySQLDbDAOFactory();
         int resultado = 0;
         Connection con = mydb.MySQLDbDAOFactory();
         PreparedStatement st;
-        String insert = "insert into factura ((VALOR_FACTURA,CLIENTE_ID_CLIENTE,VEHICULO_ID_VEHICULO,USUARIO_ID_USUARIO) values (" + 40239 + "," + id_cliente + "," + id_vehiculo + "," + "1);";
+        String insert = "insert into factura (valor_factura,CLIENTE_ID_CLIENTE,VEHICULO_ID_VEHICULO,USUARIO_ID_USUARIO) values ("+ precio + "," + id_cliente + "," + id_vehiculo + "," + "1);";
         try {
             st = con.prepareStatement(insert);
             resultado = st.executeUpdate();

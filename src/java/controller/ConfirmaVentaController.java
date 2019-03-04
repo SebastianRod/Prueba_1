@@ -31,18 +31,21 @@ public class ConfirmaVentaController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(false);
-        int id = (int) session.getAttribute("id_vehiculo");
-        System.out.println(id);
-        int idCliente = (int) session.getAttribute("id_cliente");
+        String idVehiculo_request = request.getParameter("id_vehiculo");
+        String precioVehiculo_request = request.getParameter("precio_vehiculo");
+        System.out.println("el idVehiculo_request al confirmar es: "+idVehiculo_request);
+        String idCliente = request.getParameter("id_cliente");
+        String precio = request.getParameter("precio_vehiculo");
+        System.out.println("el precio es: "+precio);
         System.out.println(idCliente);
 
         DAOFactory pdb = DAOFactory.getDAOFactory(1);
 
-        int crearFactura = pdb.getFacturaDAO().crearFactura(idCliente, id);
+        int crearFactura = pdb.getFacturaDAO().crearFactura(idCliente, idVehiculo_request, precioVehiculo_request);
 
         if (crearFactura > 0) {
             request.getSession().setAttribute("mensaje", "Venta creada");
-            response.sendRedirect("./inicio.jsp");
+            response.sendRedirect("./jsp/inicio.jsp");
         }
     }
 

@@ -32,14 +32,13 @@ public class BuscarClienteController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        String id = (String)session.getAttribute("id_cliente");
-        System.out.println("id_cliente en sesion: "+ id);
         String tipo_documento_cliente = request.getParameter("tipo_documento_cliente");
+        System.out.println(tipo_documento_cliente);
         String id_cliente = request.getParameter("id_cliente");
+        System.out.println(id_cliente);
         DAOFactory pdb = DAOFactory.getDAOFactory(1);
         Map<String, String> cliente = pdb.getClienteDAO().consultaCliente(tipo_documento_cliente, id_cliente);
-        session.setAttribute("cliente", cliente);
+        //session.setAttribute("cliente", cliente);
         request.setAttribute("cliente", cliente);
         RequestDispatcher rd = request.getRequestDispatcher("./jsp/consultaCliente.jsp");
         rd.forward(request, response);

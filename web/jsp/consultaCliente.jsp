@@ -63,5 +63,19 @@
                 </div>
             </div>
         </div>
+        <div class="table-responsive">
+            <table id="tablaResultado" class="table table-striped table-hover table-bordered" >
+                <thead>
+                    <tr>
+                        <th>ID_Cliente</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>${cliente.id_cliente}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </body>
 </html>

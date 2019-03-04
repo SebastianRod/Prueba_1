@@ -43,54 +43,54 @@
                     <div class="login-form">
                         <div class="panel-heading">Datos Cliente</div>
                         <center>
-                            <form method="post"  action="/Prueba_1/ConfirmaVentaController">
+                            <form method="get"  action="/Prueba_1/ConfirmaVentaController">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <p>
                                             <label>Tipo documento</label>
-                                            <input type="text" class="form-control form-control-sm" name="id_cliente" id="tipo_documento_cliente" placeholder="${cliente.tipo_documento_cliente}" disabled=”disabled”>
+                                            <input type="text" class="form-control form-control-sm" name="tipo_documento_cliente" id="tipo_documento_cliente" value="${cliente.tipo_documento_cliente}" readonly="readonly">
                                         </p>
                                         <p>
                                             <label>ID Cliente:</label>
-                                            <input type="text" class="form-control form-control-sm" name="id_cliente" id="id_cliente" placeholder="${cliente.id_cliente}" disabled=”disabled”>
+                                            <input type="text" class="form-control form-control-sm" name="id_cliente" id="id_cliente" value="${cliente.id_cliente}" readonly="readonly">
                                         </p>
                                         <p>
                                             <label>Nombres Cliente:</label>
-                                            <input type="text" class="form-control form-control-sm" name="id_cliente" id="nombres_cliente" placeholder="${cliente.nombres_cliente}" disabled=”disabled”>
+                                            <input type="text" class="form-control form-control-sm" name="nombres_cliente" id="nombres_cliente" value="${cliente.nombres_cliente}" readonly="readonly">
                                         </p>
                                         <p>
                                             <label>Apellidos Cliente:</label>
-                                            <input type="text" class="form-control form-control-sm" name="id_cliente" id="apellidos_cliente" placeholder="${cliente.apellidos_cliente}" disabled=”disabled”>
+                                            <input type="text" class="form-control form-control-sm" name="apellidos_cliente" id="apellidos_cliente" value="${cliente.apellidos_cliente}" readonly="readonly">
                                         </p>
                                         <p>
                                             <label>Telefono Cliente:</label>
-                                            <input type="text" class="form-control form-control-sm" name="id_cliente" id="telefono_cliente" placeholder="${cliente.telefono_cliente}" disabled=”disabled”>
+                                            <input type="text" class="form-control form-control-sm" name="telefono_cliente" id="telefono_cliente" value="${cliente.telefono_cliente}" readonly="readonly">
                                         </p>
                                         <p>
                                             <label>Correo Cliente:</label>
-                                            <input type="text" class="form-control form-control-sm" name="id_cliente" id="correo_cliente" placeholder="${cliente.correo_cliente}" disabled=”disabled”>
+                                            <input type="text" class="form-control form-control-sm" name="correo_cliente" id="correo_cliente" value="${cliente.correo_cliente}" readonly="readonly">
                                         </p>
                                         <p>
                                             <label>Direccion Cliente:</label>
-                                            <input type="text" class="form-control form-control-sm" name="id_cliente" id="direccion_cliente" placeholder="${cliente.direccion_cliente}" disabled=”disabled”>
+                                            <input type="text" class="form-control form-control-sm" name="direccion_cliente" id="direccion_cliente" value="${cliente.direccion_cliente}" readonly="readonly">
                                         </p>
                                     </div>
                                     <div class="col-md-6">
                                         <p>
                                             <label>ID Vehiculo</label>
-                                            <input type="text" class="form-control form-control-sm" name="id_vehiculo" id="id_vehiculo" placeholder="${vehiculo.id}" disabled=”disabled”>
+                                            <input type="text" class="form-control form-control-sm" name="id_vehiculo" id="id_vehiculo" value="${vehiculo.id}" readonly="readonly">
                                         </p>
                                         <p>
                                             <label>Placa Vehiculo</label>
-                                            <input type="text" class="form-control form-control-sm" name="placa_vehiculo" id="placa_vehiculo" placeholder="${vehiculo.placa}" disabled=”disabled”>
+                                            <input type="text" class="form-control form-control-sm" name="placa_vehiculo" id="placa_vehiculo" value="${vehiculo.placa}" readonly="readonly">
                                         </p>
                                         <p>
                                             <label>Modelo Vehiculo</label>
-                                            <input type="text" class="form-control form-control-sm" name="modelo_vehiculo" id="modelo_vehiculo" placeholder="${vehiculo.modelo}" disabled=”disabled”>
+                                            <input type="text" class="form-control form-control-sm" name="modelo_vehiculo" id="modelo_vehiculo" value="${vehiculo.modelo}" readonly="readonly">
                                         </p>
                                         <p>
                                             <label>Precio Vehiculo</label>
-                                            <input type="text" class="form-control form-control-sm" name="precio_vehiculo" id="precio_vehiculo" placeholder="${vehiculo.precio}" disabled=”disabled”>
+                                            <input type="text" class="form-control form-control-sm" name="precio_vehiculo" id="precio_vehiculo" value="${vehiculo.precio}" readonly="readonly">
                                         </p>
                                     </div>
                                 </div>

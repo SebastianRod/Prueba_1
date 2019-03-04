@@ -13,5 +13,5 @@ import java.util.Map;
  */
 public interface FacturaDAO {
     public Map<String, String> consultaFactura(String id_factura);
-    public int crearFactura(int id_cliente, int id_vehiculo);
+    public int crearFactura(String id_cliente, String id_vehiculo, String precio);
 }

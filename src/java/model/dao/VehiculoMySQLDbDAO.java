@@ -8,9 +8,9 @@ package model.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -18,6 +18,8 @@ import java.util.Map;
  */
 public class VehiculoMySQLDbDAO implements VehiculoDAO {
 
+    static Logger log = Logger.getLogger(VehiculoMySQLDbDAO.class);
+    
     @Override
     public Map<String, String> consultaVehiculo(String id_vehiculo) {
         MySQLDbDAOFactory mydb = new MySQLDbDAOFactory();
@@ -27,6 +29,7 @@ public class VehiculoMySQLDbDAO implements VehiculoDAO {
         ResultSet rs;
         try {
             st = con.prepareStatement("select * from vehiculo where id_vehiculo = '" + id_vehiculo + "';");
+            log.info("Se esta ejecutnado el query: "+st);
             rs = st.executeQuery();
             while (rs.next()) {
                 vehiculo.put("id", rs.getString("id_vehiculo"));
@@ -37,7 +40,8 @@ public class VehiculoMySQLDbDAO implements VehiculoDAO {
             }
             st.close();
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            log.fatal("Error consultando vehiculo: "+e.getMessage());
         }
         return vehiculo;
     }

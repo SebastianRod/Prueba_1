@@ -7,6 +7,7 @@ package model.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -19,6 +20,7 @@ public class MySQLDbDAOFactory extends DAOFactory {
     private final String login = "root";
     private final String passwd = "root";
     private static MySQLDbDAOFactory mysql;
+    static Logger log = Logger.getLogger(MySQLDbDAOFactory.class);
 
     public static MySQLDbDAOFactory mysqlDAO(){
         if(mysql == null){
@@ -36,7 +38,8 @@ public class MySQLDbDAOFactory extends DAOFactory {
                 //st = con.createStatement();
 
             } catch (Exception e) {
-                System.out.println(e.getMessage());
+                //System.out.println(e.getMessage());
+                log.fatal("Error creando conexion a base de datos "+e.getMessage());
             }
         
         return con;

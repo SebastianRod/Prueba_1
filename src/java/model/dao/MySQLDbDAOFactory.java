@@ -7,7 +7,6 @@ package model.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-//import java.sql.Statement;
 
 /**
  *
@@ -16,9 +15,9 @@ import java.sql.DriverManager;
 public class MySQLDbDAOFactory extends DAOFactory {
 
     private Connection con = null;
-    private String url = "jdbc:mysql://localhost:3306/TAS";
-    private String login = "root";
-    private String passwd = "root";
+    private final String url = "jdbc:mysql://localhost:3306/TAS";
+    private final String login = "root";
+    private final String passwd = "root";
     private static MySQLDbDAOFactory mysql;
 
     public static MySQLDbDAOFactory mysqlDAO(){

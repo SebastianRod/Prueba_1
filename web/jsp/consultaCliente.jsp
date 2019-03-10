@@ -23,16 +23,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="./consultaVehiculo.jsp">Consulta Vehiculos <span class='fas fa-car' style='font-size:24px'></span></a>
+                        <a class="nav-link" href="/Prueba_1/jsp/consultaVehiculo.jsp">Consulta Vehiculos <span class='fas fa-car' style='font-size:24px'></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./ingresaVenta.jsp">Ingresar Venta <span class='fas fa-cart-plus' style='font-size:24px'></span></a>
+                        <a class="nav-link" href="/Prueba_1/jsp/consultaVenta.jsp">Consulta venta <span class='fas fa-search-dollar' style='font-size:24px'></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./consultaVenta.jsp">Consulta venta <span class='fas fa-search-dollar' style='font-size:24px'></span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="./consultaCliente.jsp">Consulta Cliente <span class="fas fa-child" style='font-size:24px'></span></a>
+                        <a class="nav-link active" href="/Prueba_1/jsp/consultaCliente.jsp">Consulta Cliente <span class="fas fa-child" style='font-size:24px'></span></a>
                     </li>
                 </ul>
             </div>
@@ -63,19 +60,35 @@
                 </div>
             </div>
         </div>
-        <div class="table-responsive">
-            <table id="tablaResultado" class="table table-striped table-hover table-bordered" >
-                <thead>
-                    <tr>
-                        <th>ID_Cliente</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>${cliente.id_cliente}</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="table-responsive">
+                    <table id="tablaResultado" class="table table-striped table-hover table-bordered" >
+                        <thead>
+                            <tr>
+                                <th>ID_Cliente</th>
+                                <th>Tipo Documento Cliente</th>
+                                <th>Nombres Cliente</th>
+                                <th>Apellidos Cliente</th>
+                                <th>Telefono Cliente</th>
+                                <th>Correo Cliente</th>
+                                <th>Direccion Cliente</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>${cliente.id_cliente}</td>
+                                <td>${cliente.tipo_documento_cliente}</td>
+                                <td>${cliente.nombres_cliente}</td>
+                                <td>${cliente.apellidos_cliente}</td>
+                                <td>${cliente.telefono_cliente}</td>
+                                <td>${cliente.correo_cliente}</td>
+                                <td>${cliente.direccion_cliente}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </body>
 </html>

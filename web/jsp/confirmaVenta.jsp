@@ -26,9 +26,6 @@
                         <a class="nav-link" href="/Prueba_1/jsp/consultaVehiculo.jsp">Consulta Vehiculos <span class='fas fa-car' style='font-size:24px'></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/Prueba_1/jsp/ingresaVenta.jsp">Ingresar Venta <span class='fas fa-cart-plus' style='font-size:24px'></span></a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="/Prueba_1/jsp/consultaVenta.jsp">Consulta venta <span class='fas fa-search-dollar' style='font-size:24px'></span></a>
                     </li>
                     <li class="nav-item">
@@ -103,5 +100,5 @@
                 </div>
             </div>
         </div>
-    </body>
+</body>
 </html>

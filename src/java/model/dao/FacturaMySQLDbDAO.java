@@ -21,7 +21,7 @@ public class FacturaMySQLDbDAO implements FacturaDAO {
     public Map<String, String> consultaFactura(String id_factura) {
         MySQLDbDAOFactory mydb = new MySQLDbDAOFactory();
         Map<String, String> factura = new HashMap<>();
-        Connection con = mydb.MySQLDbDAOFactory();
+        Connection con = mydb.conexion();
         PreparedStatement st;
         ResultSet rs;
         try {
@@ -51,7 +51,7 @@ public class FacturaMySQLDbDAO implements FacturaDAO {
     public int crearFactura(String id_cliente, String id_vehiculo,String precio) {
         MySQLDbDAOFactory mydb = new MySQLDbDAOFactory();
         int resultado = 0;
-        Connection con = mydb.MySQLDbDAOFactory();
+        Connection con = mydb.conexion();
         PreparedStatement st;
         String insert = "insert into factura (valor_factura,CLIENTE_ID_CLIENTE,VEHICULO_ID_VEHICULO,USUARIO_ID_USUARIO) values ("+ precio + "," + id_cliente + "," + id_vehiculo + "," + "1);";
         try {

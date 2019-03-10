@@ -13,23 +13,33 @@ import java.sql.DriverManager;
  *
  * @author juan.b.rodriguez
  */
-public class MySQLDbDAOFactory extends DAOFactory{
+public class MySQLDbDAOFactory extends DAOFactory {
 
-    public Connection MySQLDbDAOFactory() {
-        Connection con = null;
-        String url = "jdbc:mysql://localhost:3306/TAS";
-        String login = "root";
-        String passwd = "root";
-        //Statement st = null;
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection(url, login, passwd);
-            //st = con.createStatement();
+    private Connection con = null;
+    private String url = "jdbc:mysql://localhost:3306/TAS";
+    private String login = "root";
+    private String passwd = "root";
+    private static MySQLDbDAOFactory mysql;
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+    public static MySQLDbDAOFactory mysqlDAO(){
+        if(mysql == null){
+            mysql = new MySQLDbDAOFactory();
         }
+        return mysql;
+    }
+    
 
+    public Connection conexion() {        
+            //mysql = new MySQLDbDAOFactory();
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                con = DriverManager.getConnection(url, login, passwd);
+                //st = con.createStatement();
+
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        
         return con;
     }
 

@@ -22,7 +22,7 @@ public class VehiculoMySQLDbDAO implements VehiculoDAO {
     public Map<String, String> consultaVehiculo(String id_vehiculo) {
         MySQLDbDAOFactory mydb = new MySQLDbDAOFactory();
         Map<String, String> vehiculo = new HashMap<>();
-        Connection con = mydb.MySQLDbDAOFactory();
+        Connection con = mydb.conexion();
         PreparedStatement st;
         ResultSet rs;
         try {

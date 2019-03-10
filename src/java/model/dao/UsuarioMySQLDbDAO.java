@@ -20,7 +20,7 @@ public class UsuarioMySQLDbDAO implements UsuarioDAO{
     public int validaUsuario(String user, String pwd) {
         MySQLDbDAOFactory mydb = new MySQLDbDAOFactory();
         int resultado = 0;
-        Connection con = mydb.MySQLDbDAOFactory();
+        Connection con = mydb.conexion();
         PreparedStatement st;
         ResultSet rs;
         try{

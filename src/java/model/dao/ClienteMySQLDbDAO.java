@@ -21,7 +21,7 @@ public class ClienteMySQLDbDAO implements ClienteDAO {
     public Map<String, String> consultaCliente(String tipoDocumento, String id_cliente) {
         MySQLDbDAOFactory mydb = new MySQLDbDAOFactory();
         Map<String, String> cliente = new HashMap<>();
-        Connection con = mydb.MySQLDbDAOFactory();
+        Connection con = mydb.conexion();
         PreparedStatement st;
         ResultSet rs;
         try {
@@ -47,7 +47,7 @@ public class ClienteMySQLDbDAO implements ClienteDAO {
     public int crearCliente(int id_cliente, String tipo_documento_cliente, String nombres_cliente, String apellidos_cliente, int telefono_cliente, String correo_cliente, String direccion_cliente) {
         MySQLDbDAOFactory mydb = new MySQLDbDAOFactory();
         int resultado = 0;
-        Connection con = mydb.MySQLDbDAOFactory();
+        Connection con = mydb.conexion();
         PreparedStatement st;
         String insert = "insert into cliente values ("+id_cliente+",'"+tipo_documento_cliente+"','"+nombres_cliente+"','"+apellidos_cliente+"',"+telefono_cliente+",'"+correo_cliente+"','"+direccion_cliente+"');";
         try{

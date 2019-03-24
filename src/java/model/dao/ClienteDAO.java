@@ -6,6 +6,7 @@
 package model.dao;
 
 import java.util.Map;
+import model.DTO.ClienteDTO;
 
 /**
  *
@@ -14,4 +15,5 @@ import java.util.Map;
 public interface ClienteDAO {
     public Map<String, String> consultaCliente(String tipoDocumento, String id_cliente);
     public int crearCliente(int id_cliente,String tipo_documento_cliente, String nombres_cliente, String apellidos_cliente, int telefono_cliente, String correo_cliente, String direccion_cliente);
+    public ClienteDTO consultaClienteREST (String tipoDocumento, String id_cliente);
 }

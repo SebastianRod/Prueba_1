@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.HashMap;
 import java.util.Map;
+import model.DTO.ClienteDTO;
 import org.apache.log4j.Logger;
 
 /**
@@ -66,6 +67,32 @@ public class ClienteMySQLDbDAO implements ClienteDAO {
             log.fatal("Error creando cliente "+e.getMessage());
         }
         return resultado;
+    }
+
+    @Override
+    public ClienteDTO consultaClienteREST(String tipoDocumento, String id_cliente) {
+        MySQLDbDAOFactory mydb = new MySQLDbDAOFactory();
+        ClienteDTO cliente = new ClienteDTO();
+        Connection con = mydb.conexion();
+        PreparedStatement st;
+        ResultSet rs;
+        try {
+            st = con.prepareStatement("select * from cliente where id_cliente = " + id_cliente + " and tipo_documento_cliente = '" + tipoDocumento + "';");
+            rs = st.executeQuery();
+            while (rs.next()) {
+                cliente.setTipo_documento_cliente(rs.getString("tipo_documento_cliente"));
+                cliente.setId_cliente(Integer.parseInt(rs.getString("id_cliente")));
+                cliente.setNombres_cliente(rs.getString("nombres_cliente"));
+                cliente.setApellidos_cliente(rs.getString("apellidos_cliente"));
+                cliente.setTelefono_cliente(rs.getString("telefono_cliente"));
+                cliente.setCorreo_cliente(rs.getString("correo_cliente"));
+                cliente.setDireccion_cliente(rs.getString("direccion_cliente"));
+            }
+            st.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return cliente;
     }
 
 }

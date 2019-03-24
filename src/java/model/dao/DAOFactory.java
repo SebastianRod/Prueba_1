@@ -5,7 +5,7 @@
  */
 package model.dao;
 
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
 
 /**
  *
@@ -13,7 +13,7 @@ import org.apache.log4j.Logger;
  */
 public abstract class DAOFactory {
 
-    static Logger log = Logger.getLogger(DAOFactory.class);
+    //static Logger log = Logger.getLogger(DAOFactory.class);
     public static final int MySQL = 1;
 
     public abstract UsuarioDAO getUsuarioDAO();
@@ -26,7 +26,7 @@ public abstract class DAOFactory {
             case MySQL:
                 return new MySQLDbDAOFactory();
             default:
-                log.warn("No se envio parametro valido");
+                //log.warn("No se envio parametro valido");
                 return null;
         }
     }

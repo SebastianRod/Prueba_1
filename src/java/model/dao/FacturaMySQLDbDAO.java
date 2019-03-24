@@ -18,7 +18,7 @@ import org.apache.log4j.Logger;
  */
 public class FacturaMySQLDbDAO implements FacturaDAO {
 
-    static Logger log = Logger.getLogger(FacturaMySQLDbDAO.class);
+    //static Logger log = Logger.getLogger(FacturaMySQLDbDAO.class);
     
     @Override
     public Map<String, String> consultaFactura(String id_factura) {
@@ -34,7 +34,7 @@ public class FacturaMySQLDbDAO implements FacturaDAO {
                     + " and f.ID_FACTURA ='" + id_factura + "';");
             System.out.println(st);
             rs = st.executeQuery();
-            log.info("Se esta ejecutnado el query: "+st);
+            //log.info("Se esta ejecutnado el query: "+st);
             while (rs.next()) {
                 factura.put("id_factura", rs.getString("id_factura"));
                 factura.put("fecha_factura", rs.getString("fecha_factura"));
@@ -47,7 +47,7 @@ public class FacturaMySQLDbDAO implements FacturaDAO {
             }
         } catch (Exception e) {
             //e.printStackTrace();
-            log.fatal("Error consultando factura "+e.getMessage());
+            //log.fatal("Error consultando factura "+e.getMessage());
         }
         return factura;
     }
@@ -59,14 +59,14 @@ public class FacturaMySQLDbDAO implements FacturaDAO {
         Connection con = mydb.conexion();
         PreparedStatement st;
         String insert = "insert into factura (valor_factura,CLIENTE_ID_CLIENTE,VEHICULO_ID_VEHICULO,USUARIO_ID_USUARIO) values ("+ precio + "," + id_cliente + "," + id_vehiculo + "," + "1);";
-        log.info("Se esta ejecutnado el query: "+insert);
+        //log.info("Se esta ejecutnado el query: "+insert);
         try {
             st = con.prepareStatement(insert);
             resultado = st.executeUpdate();
             st.close();
         } catch (Exception e) {
             //e.printStackTrace();
-            log.fatal("Error creando factura "+e.getMessage());
+            //log.fatal("Error creando factura "+e.getMessage());
         }
         return resultado;
     }

@@ -27,7 +27,8 @@ public class UsuarioMySQLDbDAO implements UsuarioDAO{
         PreparedStatement st;
         ResultSet rs;
         try{
-            st = con.prepareStatement("select * from usuario where id_usuario = '"+user+"' and contraseña_usuario = '"+pwd+"';");
+            st = con.prepareStatement("select * from usuario where id_usuario = '"+user+"' and password_usuario = '"+pwd+"';");
+            System.out.println(st);
             //log.info("Se esta ejecutnado el query: "+st);
             rs = st.executeQuery();
             while(rs.next()){

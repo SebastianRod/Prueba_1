@@ -10,7 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.HashMap;
 import java.util.Map;
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
 
 /**
  *
@@ -18,7 +18,7 @@ import org.apache.log4j.Logger;
  */
 public class VehiculoMySQLDbDAO implements VehiculoDAO {
 
-    static Logger log = Logger.getLogger(VehiculoMySQLDbDAO.class);
+    //static Logger log = Logger.getLogger(VehiculoMySQLDbDAO.class);
     
     @Override
     public Map<String, String> consultaVehiculo(String id_vehiculo) {
@@ -29,7 +29,7 @@ public class VehiculoMySQLDbDAO implements VehiculoDAO {
         ResultSet rs;
         try {
             st = con.prepareStatement("select * from vehiculo where id_vehiculo = '" + id_vehiculo + "';");
-            log.info("Se esta ejecutnado el query: "+st);
+            //log.info("Se esta ejecutnado el query: "+st);
             rs = st.executeQuery();
             while (rs.next()) {
                 vehiculo.put("id", rs.getString("id_vehiculo"));
@@ -40,8 +40,8 @@ public class VehiculoMySQLDbDAO implements VehiculoDAO {
             }
             st.close();
         } catch (Exception e) {
-            //e.printStackTrace();
-            log.fatal("Error consultando vehiculo: "+e.getMessage());
+            e.printStackTrace();
+            //log.fatal("Error consultando vehiculo: "+e.getMessage());
         }
         return vehiculo;
     }
